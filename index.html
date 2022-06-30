@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneer Bank</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+ 
+</head>
+<body>
+    <img class="logo" src="images/logo.png" alt="">
+    
+
+   <div id="login-area"  class="container">
+    <h1 class="body-title ">Welcome To Pioneer Bank</h1> 
+    <div class="login-box">
+        
+        <h4>Login</h4> 
+    
+    
+    <input type="text" class="form-control" placeholder="👤Username">
+        <br>
+    
+    <input type="password" class="form-control" placeholder="🔒Password" name="" id="">
+        <br>
+        <button id="login" class="btn btn-success" type="">Submit</button>
+        </div>
+   </div>
+
+   <div id="tansaction-area">
+     <div class="row">
+        <div class="col-md-4 " >
+            <div class="deposit status">
+                <h5>Deposit</h5>
+                <h2>00$</h2>
+            </div>
+            
+        </div>
+        <div class="col-md-4 ">
+            <div class="withdraw status">
+                <h5>Withdraw</h5>
+                <h2>00$</h2>
+            </div>
+            
+        </div>
+        <div class="col-md-4 ">
+            <div class="balance status">
+                <h5>Balance</h5>
+                <h2>1240$</h2>
+            </div>
+            
+        </div>
+     </div>
+     <div class="row myopinion">
+        <div class="col-md-6 ">
+            <div class="odeposit opinion">
+                <h4>Deposit</h4>
+                <br>
+                <input class="form-control" type="text" placeholder="$ Amount you want to Deposit">
+                <br>
+                <button class="btn btn btn-success">Deposit</button>
+            </div>
+        </div>
+            
+        <div class="col-md-6">
+            <div class="owithdraw opinion">
+                <h4>Withdraw</h4>
+                <br>
+            <input class="form-control" type="text" placeholder="$ Amount you want to withdraw">
+            <br>
+            <button class="btn btn btn-success">Withdraw</button>
+            </div>
+            
+        </div>
+     </div>
+   </div>
+
+   <script>
+    const loginBtn = document.getElementById("login");
+    loginBtn.addEventListener("click",function () {
+        const loginArea =document.getElementById("login-area");
+        loginArea.style.display= "none";
+        const tansactionArea = document.getElementById("tansaction-area")
+        tansactionArea.style.display ="block";
+    })
+   </script>
+</body>
+</html>
