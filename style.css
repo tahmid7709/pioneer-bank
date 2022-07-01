@@ -1,14 +1,25 @@
 body{
     padding: 100px; 
-    background-image: linear-gradient(45deg, #ffffff 0%,#f6f6f6 47%,#ededed 100%);;   
+    background-image:
+  
+  url('images/bg.jpg');
+
+  
+}
+.bg{
+    opacity: 0.2;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    left: -5px; top: 0;
+    margin: auto;
 }
 
-
 body .logo{
-    width: 92px;
-    height: 66px;
+    width: 250px;
+    height: 50px;
     position: absolute;
-    left: -1px; top: 5px;
+    left: 20px; top: 15px;
     
 }
 body .body-title{
@@ -16,24 +27,29 @@ body .body-title{
     font-family: 'Alfa Slab One', cursive;
 }
 .login-box{
+    margin: auto;
+    width: 60%;
+   
     margin-top: 2%;
     border: 2px solid grey;
     border-radius: 20px;
     padding: 8% 5%;
     box-shadow: 15px 15px 10px gray;
     border-style: none;
-    background-color: lightcyan;
+    background-color: rgba(224, 255, 255,0.9);
+    
     
 }
 #tansaction-area{
     display: none;
 }
 .status{
- margin: 0 20px;
- color: white;
- border-radius: 20px;
- padding: 25px;
- height: 200px;
+    width: 100%;
+    margin: 0 20px;
+    color: white;
+    border-radius: 20px;
+    padding: 25px;
+    height: 200px;
 }
 .status h2{
     font-size: 65px;
@@ -42,13 +58,18 @@ body .body-title{
 
 }
 .deposit{
-background-color: slateblue;
+    background-color: slateblue;
+    box-shadow: 5px 5px 10px grey;
+
 }
 .withdraw{
-background-color: lightsalmon;
+    background-color: lightsalmon;
+    box-shadow: 5px 5px 10px grey;
 }
 .balance{
-background-color: orange;
+    
+    background-color: orange;
+    box-shadow: 5px 5px 10px grey;
 }
 
 .opinion{

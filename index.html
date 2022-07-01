@@ -15,8 +15,8 @@
  
 </head>
 <body>
-    <img class="logo" src="images/logo.png" alt="">
-    
+    <img class="logo" src="images/logo.svg" alt="">
+    <!-- <img class="bg" src="images/bg.jpg" alt=""> -->
 
    <div id="login-area"  class="container">
     <h1 class="body-title ">Welcome To Pioneer Bank</h1> 
@@ -31,7 +31,10 @@
     <input type="password" class="form-control" placeholder="🔒Password" name="" id="">
         <br>
         <button id="login" class="btn btn-success" type="">Submit</button>
+        <br> 
+        <a href="">Forget password?</a>
         </div>
+        
    </div>
 
    <div id="tansaction-area">
@@ -39,7 +42,7 @@
         <div class="col-md-4 " >
             <div class="deposit status">
                 <h5>Deposit</h5>
-                <h2>00$</h2>
+                <h2 >$<span id="currentDeposit">00</span></h2>
             </div>
             
         </div>
@@ -53,7 +56,7 @@
         <div class="col-md-4 ">
             <div class="balance status">
                 <h5>Balance</h5>
-                <h2>1240$</h2>
+                <h2>$ <span id="currentBalance"> 1240</span></h2>
             </div>
             
         </div>
@@ -63,9 +66,9 @@
             <div class="odeposit opinion">
                 <h4>Deposit</h4>
                 <br>
-                <input class="form-control" type="text" placeholder="$ Amount you want to Deposit">
+                <input id="depositAmount" class="form-control" type="text" placeholder="$ Amount you want to Deposit">
                 <br>
-                <button class="btn btn btn-success">Deposit</button>
+                <button id="addDeposit" class="btn btn-success">Deposit</button>
             </div>
         </div>
             
@@ -73,9 +76,9 @@
             <div class="owithdraw opinion">
                 <h4>Withdraw</h4>
                 <br>
-            <input class="form-control" type="text" placeholder="$ Amount you want to withdraw">
+            <input id="withdrawAmount" class="form-control" type="text" placeholder="$ Amount you want to withdraw">
             <br>
-            <button class="btn btn btn-success">Withdraw</button>
+            <button id="addWithdraw" class="btn btn-success">Withdraw</button>
             </div>
             
         </div>
@@ -89,7 +92,44 @@
         loginArea.style.display= "none";
         const tansactionArea = document.getElementById("tansaction-area")
         tansactionArea.style.display ="block";
+       
+         })
+        // deposit button area----------------------------------->
+        
+        const depositBtn = document.getElementById("addDeposit");
+        depositBtn.addEventListener("click",function(){
+            const depositNumber = getInputNumber("depositAmount")
+
+        // -----------------------------------------
+
+        updateSpanText("currentDeposit", depositNumber);
+        updateSpanText("currentBalance", depositNumber);
+
+        document.getElementById("depositAmount").value = "";
     })
+
+    //----------------------------------------
+    const withdrawBtn = document.getElementById("addWithdraw");
+    withdrawBtn.addEventListener("click",function(){
+        const withdrawNumber = getInputNumber("withdrawAmount"); 
+        console.log(withdrawNumber);    
+        })
+
+        function getInputNumber(id) {
+        const Amount = document.getElementById(id).value;
+        const AmountNumber = parseFloat(Amount);
+        return AmountNumber ;   
+        }
+    //-------------------------------------------
+    function updateSpanText(id, depositNumber) {
+        const currentBalance = document.getElementById(id).innerText;
+            const currentBalanceNumber = parseFloat(currentBalance);
+            const totalBalance = depositNumber + currentBalanceNumber ;
+        document.getElementById(id).innerText = totalBalance ; 
+    }
+//--------------------------------------------------------------------
+    
+
    </script>
 </body>
 </html>
